@@ -1,0 +1,30 @@
+<p>
+  manager works!
+</p>
+<div *ngIf="empId == 0; then thenBlock; else elseBlock">
+</div>
+ <ng-template #thenBlock>
+   <div> <b>NO Manager</b></div>
+</ng-template>
+<ng-template #elseBlock>
+  <div *ngIf="employee.empMgrId != 0">
+    EMPID:
+    {{ (employee | async)?.empId }}
+    Fullname :
+    {{ (employee | async)?.empFullName }}
+    email :
+    {{ (employee | async)?.empEmail }}
+    empMobile:
+    {{ (employee | async)?.empMobile }}
+    empMobile:
+    {{ (employee | async)?.empMobile }}
+    empDateOfJoining:
+    {{ (employee | async)?.empDateOfJoining }}
+    empAvailabeLeave:
+    {{ (employee | async)?.empAvailabeLeave }}
+    empDepartment:
+    {{ (employee | async)?.empDepartment }}
+  </div>
+</ng-template>
+
+

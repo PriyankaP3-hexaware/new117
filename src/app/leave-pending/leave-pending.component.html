@@ -1,0 +1,46 @@
+
+<p>
+    <table border="3">
+        <tr *ngFor = "let emp of empData | async">  
+            <div *ngIf ="emp.empMgrId == empId">
+            <th>EmployeeId</th><td>{{emp.empId}}</td>
+              <th>EmployeeName</th><td>{{emp.empFullName}}</td>
+              <th>Emp_Available_Leave</th><td>{{emp.empAvailabeLeave}}</td>
+        <tr border ="3">
+          <th>leaveEmpId</th>
+          <th width ="60">leaveId</th>
+          <th>leaveType</th>
+          <th width ="30">leaveStartDate </th>
+          <th>leaveEndDate </th>
+          <th>leaveAppliedOn</th>
+          <th width ="50">leaveReason</th>
+          <th>leaveNoOfDays </th>
+          <th>leaveStatus </th>
+          <th>leaveMgrComments</th>
+        </tr>
+      </div>
+      <table border ="3">
+        <tr *ngFor ="let leave of leaveDetails | async" (click) ="setClickRowDup(leave.leaveId,leave.leaveEmpId)">
+          <div *ngIf ="emp.empId ==leave.leaveEmpId" rowspan=200 px>
+            <td width ="80">{{leave.leaveEmpId}}</td>
+            <td width ="60">{{leave.leaveId}}</td>
+            <td width ="100">{{leave.leaveType}}</td>
+            <td width ="110">{{leave.leaveStartDate}}</td>
+            <td width ="150">{{leave.leaveEndDate}}</td>
+            <td width ="110">{{leave.leaveAppliedOn}}</td>
+            <td width ="95">{{leave.leaveReason}}</td>
+            <td width ="100">{{leave.leaveNoOfDays}}</td>
+            <td width ="70">{{leave.leaveStatus}}</td>
+            <td width ="130">{{leave.leaveMgrComments}}</td>
+          </div>
+        </tr>
+      </table>
+</tr>
+ </table>
+ <div align ="center" *ngIf ="showButton">
+   <input type ="button"  value="Approve/Deny" (click)="approveDeny()">
+</div>
+ <div align ="center" *ngIf ="!showButton">
+    <input type ="button"  value="Approve/Deny" disabled>
+
+ </div>

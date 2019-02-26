@@ -1,0 +1,26 @@
+<p>
+  approvedeny works!
+</p>
+Employee Id  :
+{{ (employee | async)?.empId }}
+<br/>
+<br/>
+Fullname :
+{{ (employee | async)?.empFullName }}
+<br/>
+<br/>
+EmpAvailabeLeave :
+{{ (employee | async)?.empAvailabeLeave }}
+<br/>
+<br/>
+comment &nbsp;<input type ="text" [(ngModel)]="obj.leaveMgrComments">
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type = "button" value ="Approve" (click)="approve()">
+
+&nbsp;&nbsp;&nbsp;&nbsp;<input type = "button" value ="Deny" (click) ="deny()">
+
+&nbsp;&nbsp;&nbsp;&nbsp;<input type = "button" value ="Cancel" > 
+
+Result is : {{msg}}
+

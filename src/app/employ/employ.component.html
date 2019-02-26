@@ -1,0 +1,26 @@
+<p>
+  user works!
+</p>
+<table border="3">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>email</th>
+    <th>PhNo </th>
+    <th>doj </th>
+    <th>mgrid</th>
+    <th>empAvailableLeave</th>
+    <th>empDeparment </th>
+  </tr>
+  <tr *ngFor ="let user of emp | async">
+    <td>{{user.empId}}</td>
+    <td>{{user.empFullName}}</td>
+    <td>{{user.empEmail}}</td>
+    <td>{{user.empMobile}}</td>
+    <td>{{user.empDateOfJoining}}</td>
+    <td>{{user.empMgrId}}</td>
+    <td>{{user.empAvailabeLeave}}</td>
+    <td>{{user.empDepartment}}</td>
+    <input type ="button" value ="login" (click)="login(user.empId,user.empMgrId)">
+  </tr>
+  </table>
