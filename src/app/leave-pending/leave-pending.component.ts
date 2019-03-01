@@ -15,6 +15,10 @@ export class LeavePendingComponent implements OnInit {
   
   showButton : boolean;
 
+  order :string ="leaveStartDate";
+  reverse :boolean =true;
+  sempno :string ='empId';
+  rev :boolean = true;
   leaveDetails :Observable<LeaveDetails[]>;
   empId :number;
   empData :Observable<Employee[]>;
@@ -28,6 +32,12 @@ export class LeavePendingComponent implements OnInit {
 
   }
 
+  setOrder(value :string) {
+    if(this.order ==value) {
+      this.reverse = !this.reverse;
+    }
+    this.order = value;
+  }
   setClickRowDup(leaveId,empId) {
     alert(leaveId);
     localStorage.setItem("leavid",leaveId);

@@ -16,6 +16,10 @@ import { ManagerComponent } from './manager/manager.component';
 import { LeavePendingComponent } from './leave-pending/leave-pending.component';
 import { LeavehistoryComponent } from './leavehistory/leavehistory.component';
 import { ApprovedenyComponent } from './approvedeny/approvedeny.component';
+import { ApplyleaveComponent } from './applyleave/applyleave.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { RoutedemoComponent } from './routedemo/routedemo.component';
+import { SortdataPipe } from './sortdata.pipe';
 const appRoutes : Routes = [
   {
     path :'user',component : UserComponent},
@@ -24,7 +28,9 @@ const appRoutes : Routes = [
     {path :'DashBoard',component :DashboardComponent},
     {path :'pending',component :LeavePendingComponent},
       {path :'LeaveHistory',component :LeavehistoryComponent},
-      { path:'approveDeny',component :ApprovedenyComponent}
+      { path:'approveDeny',component :ApprovedenyComponent},
+      { path:'applyLeave',component :ApplyleaveComponent},
+
 
   ];
 @NgModule({
@@ -40,7 +46,11 @@ const appRoutes : Routes = [
     ManagerComponent,
     LeavePendingComponent,
     LeavehistoryComponent,
-    ApprovedenyComponent
+    ApprovedenyComponent,
+    ApplyleaveComponent,
+    DropdownComponent,
+    RoutedemoComponent,
+    SortdataPipe
   ],
   imports: [
     BrowserModule,HttpModule,FormsModule, RouterModule.forRoot(appRoutes)

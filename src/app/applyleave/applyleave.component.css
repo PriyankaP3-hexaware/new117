@@ -1,0 +1,14 @@
+
+  h1 {
+    color: blue;
+  }
+  p {
+    color: red;
+  }
+  body {
+    background-color:grey; /*Default bg, similar to the background's base color*/
+    background-image: url("hi.png");
+    background-position: right bottom; /*Positioning*/
+    background-repeat: no-repeat; /*Prevent showing multiple background images*/
+   
+ }

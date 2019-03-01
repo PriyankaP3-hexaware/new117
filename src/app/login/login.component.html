@@ -1,7 +1,28 @@
-<p>
-  login works!
-</p>
-UserName <input type = "text" id = "name" [(ngModel)]="name" name="name"><br/><br/>
-Password<input type = "password" id = "password" [(ngModel)]="password" name="password"><br/><br/>
 
-<input type = "Button" value ="Login" (click) ="login()">
+<h1 style= "color:rgb(155, 204, 19);text-align:center;"><i><b>LOGIN</b></i> </h1>
+<div class="imgcontainer">
+<img src="hi.png" alt="Avatar" class="avatar">
+</div>
+<form name =frmlogin (ngSubmit)="login()">
+<div class="container">
+  <table broder-color="black" width="50%"  align="center">
+   <tr> <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username"[(ngModel)]="name" name="uname" required readonly></tr><br/>
+<tr>
+    <label for="psw"><b>Password</b></label>
+   
+     <input type="password" placeholder="Enter Password"[(ngModel)]="password" name="psw" required >
+    </tr>
+    <br/> 
+    <tr>
+      <td>
+        <div class="zoom">
+        <button  type ="Submit"><i><b>Login</b></i></button>
+      </div> 
+    </td>
+    </tr>
+
+  </table>
+  </div>
+  </form>
+    

@@ -1,16 +1,18 @@
-<p>
-  user works!
-</p>
-<table border="3">
+
+<div>
+<br/> <h1>LEAVE MANAGEMENT</h1>
+
+<table border="3" align="center">
   <tr>
-    <th>Id</th>
+    <th>EmpId</th>
     <th>Name</th>
-    <th>email</th>
-    <th>PhNo </th>
-    <th>doj </th>
-    <th>mgrid</th>
-    <th>empAvailableLeave</th>
-    <th>empDeparment </th>
+    <th>Email</th>
+    <th>MobileNo </th>
+    <th >Date_Of_Joining </th>
+    <th>ManagerId</th>
+    <th>AvailableLeave</th>
+    <th>Deparment </th>
+    <th>Login</th>
   </tr>
   <tr *ngFor ="let user of emp | async">
     <td>{{user.empId}}</td>
@@ -21,6 +23,10 @@
     <td>{{user.empMgrId}}</td>
     <td>{{user.empAvailabeLeave}}</td>
     <td>{{user.empDepartment}}</td>
-    <input type ="button" value ="login" (click)="login(user.empId,user.empMgrId)">
+    <button type ="button" value ="login" (click)="login(user.empId,user.empMgrId)">login
+      </button>
   </tr>
   </table>
+
+
+</div>

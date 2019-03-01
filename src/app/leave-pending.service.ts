@@ -25,9 +25,16 @@ export class LeavePendingService {
     ("http://localhost:8080/FTP117/api/LeaveDetails/Leavehistory/" +leaveEmpId)
     .map((res :Response) =>res.json());
   }
-  approveDeny(empMgrId :number,leaveStatus:string,ld: LeaveDetails) :Observable<string> {
+  approveDeny(empMgrId :number, leaveStatus:string, ld: LeaveDetails) :Observable<string> {
     return this.http.post
     ("http://localhost:8080/FTP117/api/LeaveDetails/approvedeny/" +empMgrId +"/"+leaveStatus,ld)
     .map((res :Response) =>res.text());
   }
+  applyLeave(empId:number,leavedetails:LeaveDetails):Observable<String> {
+    
+   return this.http.post
+   ('http://localhost:8080/FTP117/api/LeaveDetails/ApplyLeave/'+ empId,leavedetails)
+   .map(response=>response.text())
+}
+
 }

@@ -20,7 +20,7 @@
         </tr>
       </div>
       <table border ="3">
-        <tr *ngFor ="let leave of leaveDetails | async" (click) ="setClickRowDup(leave.leaveId,leave.leaveEmpId)">
+        <tr *ngFor ="let leave of leaveDetails | async | orderBy: order:reverse" (click) ="setClickRowDup(leave.leaveId,leave.leaveEmpId)">
           <div *ngIf ="emp.empId ==leave.leaveEmpId" rowspan=200 px>
             <td width ="80">{{leave.leaveEmpId}}</td>
             <td width ="60">{{leave.leaveId}}</td>
@@ -44,3 +44,9 @@
     <input type ="button"  value="Approve/Deny" disabled>
 
  </div>
+
+
+
+
+
+ 

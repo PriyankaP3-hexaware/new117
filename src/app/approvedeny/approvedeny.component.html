@@ -2,25 +2,30 @@
   approvedeny works!
 </p>
 Employee Id  :
-{{ (employee | async)?.empId }}
+{{ (employee | async)?.empId }}   &nbsp; &nbsp; StartDate :{{(leaveDetails | async )?.leaveStartDate}}
 <br/>
 <br/>
 Fullname :
-{{ (employee | async)?.empFullName }}
-<br/>
+{{ (employee | async)?.empFullName }} &nbsp; &nbsp; EndDate :{{(leaveDetails | async )?.leaveEndDate}}
+<br/>                                
 <br/>
 EmpAvailabeLeave :
-{{ (employee | async)?.empAvailabeLeave }}
+{{ (employee | async)?.empAvailabeLeave }}  
+<br/><br/>
+ No Of Days Applied :{{(leaveDetails | async )?.leaveNoOfDays}}
+ <br/><br/>
+ LeaveType :{{(leaveDetails | async )?.leaveType}}
+ <br/><br/>
+ LeaveType :{{(leaveDetails | async )?.leaveReason}}
+ <br/>  
+<br/>
+<div class ="form-group">
+comment &nbsp;<input type ="text" [(ngModel)]="obj.leaveMgrComments" class ="input" style = "margin-left:37px;">
+</div>
 <br/>
 <br/>
-comment &nbsp;<input type ="text" [(ngModel)]="obj.leaveMgrComments">
-<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type = "button" value ="Approve" (click)="approve()">
-
-&nbsp;&nbsp;&nbsp;&nbsp;<input type = "button" value ="Deny" (click) ="deny()">
-
-&nbsp;&nbsp;&nbsp;&nbsp;<input type = "button" value ="Cancel" > 
-
+<button (click)="approve()"class ="btn btn-success">Approve</button>
+<button (click)="deny()"class ="btn btn-success">Deny</button>
+<button (click)="cancel()"class ="btn btn-success">Cancel</button>
 Result is : {{msg}}
 

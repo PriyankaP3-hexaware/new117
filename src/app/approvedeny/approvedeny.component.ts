@@ -34,8 +34,8 @@ export class ApprovedenyComponent implements OnInit {
      this.obj.leaveId =this.leaveId;
      this.status ="YES";
      this.leaveService.approveDeny(this.empId,this.status,this.obj).subscribe(
-       dd =>{
-         this.msg =dd;
+       success =>{
+         this.msg =success;
        },
        errorMsg => {
          this.msg =errorMsg;
@@ -55,6 +55,11 @@ export class ApprovedenyComponent implements OnInit {
         console.log(errorMsg);
       }
     )
+  }
+  cancel() {
+
+    this._router.navigate(["/DashBoard"]);
+
   }
   ngOnInit() {
   }
